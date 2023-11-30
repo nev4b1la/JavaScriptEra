@@ -1,0 +1,28 @@
+<HTML>
+    <HEAD>
+        <TITLE>Konversi Nilai</TITLE>
+        <SCRIPT LANGUAGE = "JavaScript">
+           function test () {
+            var a=document.kirim.T1.value
+                if(a >= 93)
+                document.kirim.T2.value="A"
+                else if(a >=83 )
+                document.kirim.T2.value="B"
+                else if(a >=75 )
+                document.kirim.T2.value="C"
+                else if(a >=50 )
+                document.kirim.T2.value="D"
+                else if(a >=0 )
+                document.kirim.T2.value="E"
+           }
+        </SCRIPT>
+    <BODY>
+        <form method="POST" name="kirim">
+            <p>Masukkan Nilai <input type="text" name="T1" size="20"> <br></p>
+            <p><input type="button" value="HASIL" nama="B1" onclick=test()>
+            </p>
+            <p>Hasil Nilai <input type="text" name="T2" size="20">
+            </p>
+        </form>
+    </BODY>
+</HTML>

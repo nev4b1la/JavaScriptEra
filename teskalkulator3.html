@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="bil1" placeholder="Bilangan 1">
+        <br>
+        <input type="text" id="bil2" placeholder="Bilangan 2">
+        <br>
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+        <br>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculate(operator) {
+            let bil1 = parseFloat(document.getElementById("bil1").value);
+            let bil2 = parseFloat(document.getElementById("bil2").value);
+            let result = document.getElementById("result");
+            
+            if (!isNaN(bil1) && !isNaN(bil2)) {
+                if (operator === '+') {
+                    result.textContent = bil1 + bil2;
+                } else if (operator === '-') {
+                    result.textContent = bil1 - bil2;
+                } else if (operator === '*') {
+                    result.textContent = bil1 * bil2;
+                } else if (operator === '/') {
+                    result.textContent = bil1 / bil2;
+                }
+            } else {
+                result.textContent = "Input tidak valid";
+            }
+        }
+    </script>
+</body>
+</html>
+

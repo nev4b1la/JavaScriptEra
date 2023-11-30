@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="bil1" placeholder="Bilangan 1">
+        <br>
+        <input type="text" id="bil2" placeholder="Bilangan 2">
+        <br>
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+        <br>
+        <input type="text" id="hasil" placeholder="Hasil" readonly>
+    </div>
+    
+    <script>
+        function calculate(operator) {
+            let bil1 = parseFloat(document.getElementById("bil1").value);
+            let bil2 = parseFloat(document.getElementById("bil2").value);
+            let hasil = 0;
+
+            if (isNaN(bil1) || isNaN(bil2)) {
+                document.getElementById("hasil").value = "Masukkan angka valid";
+                return;
+            }
+
+            switch (operator) {
+                case '+':
+                    hasil = bil1 + bil2;
+                    break;
+                case '-':
+                    hasil = bil1 - bil2;
+                    break;
+                case '*':
+                    hasil = bil1 * bil2;
+                    break;
+                case '/':
+                    hasil = bil1 / bil2;
+                    break;
+            }
+
+            document.getElementById("hasil").value = hasil;
+        }
+    </script>
+</body>
+</html>
